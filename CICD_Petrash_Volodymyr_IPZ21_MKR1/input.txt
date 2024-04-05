@@ -1,0 +1,4 @@
+This is a sample text file.
+It contains some lines with various words.
+We will use it to demonstrate filtering.
+The keyword we are looking for is 'filter'.
