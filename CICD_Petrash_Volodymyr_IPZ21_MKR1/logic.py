@@ -23,13 +23,14 @@ def write_output(filtered_lines, output_file):
 
 
 def filter_file(input_file, output_file, keyword):
-    # Read input
-    lines = read_input(input_file)
-    
-    # Filter lines
-    filtered_lines = filter_lines(lines, keyword)
+    try:
+        with open(input_file, 'r') as f:
+            lines = [line.strip() for line in f if keyword in line]
+    except FileNotFoundError:
+        print("Input file not found.")
+        raise
 
-    # Write output
-    write_output(filtered_lines, output_file)
+    write_output(lines, output_file)
+
 
 
